@@ -4,28 +4,16 @@
   <div class="admin-nav" [ngClass]="{'admin-nav--compact': compactMode()}">
    <mat-list>
 
-    <app-nav-item
-     [routerLink]="'realities'"
-     [icon]="'sell'"
-     [name]="'aktuální'"
-     [tooltip]="'Aktuální'"
-     [compactMode]="compactMode()"
-    />
+    @for (nav of menu; track nav.name) {
+     <app-nav-item
+      [routerLink]="nav.routerLink"
+      [icon]="nav.icon"
+      [name]="nav.name"
+      [tooltip]="nav.tooltip"
+      [compactMode]="compactMode()"
+     />
+    }
 
-    <app-nav-item
-     [routerLink]="'realities-sold'"
-     [icon]="'paid'"
-     [name]="'prodané'"
-     [tooltip]="'Prodané'"
-     [compactMode]="compactMode()"
-    />
-
-    <app-nav-item
-     [icon]="'add_box'"
-     (clicked)="showNewItemDialog()"
-     [tooltip]="'Přidat nový inzerát'"
-     [compactMode]="compactMode()"
-    />
 
    </mat-list>
 
@@ -44,7 +32,6 @@
       (click)="compactMode.set(true)"
      />
     }
-
     <app-nav-item
      [routerLink]="'/'"
      [icon]="'logout'"

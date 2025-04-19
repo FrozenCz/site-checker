@@ -39,8 +39,8 @@ export class LoginFormComponent implements AfterViewInit{
  @ViewChild('loginForm', {static: true, read: TemplateRef}) loginForm!: TemplateRef<any>;
  matDialogRef: MatDialogRef<LoginFormComponent> | undefined
  hide = true;
- usernameFormControl = new FormControl('', [Validators.required]);
- passwordFormControl = new FormControl('', [Validators.required]);
+ usernameFormControl = new FormControl('testUser', [Validators.required]);
+ passwordFormControl = new FormControl('tu3!', [Validators.required]);
  router = inject(Router);
 
  constructor(private tokenService: TokenService, private snackBack: MatSnackBar,  private matDialog: MatDialog) {

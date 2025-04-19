@@ -1,11 +1,11 @@
 {
   "/api": {
-    "target": "http://localhost:3104",
+    "target": "http://localhost:3105",
     "secure": false,
     "pathRewrite": {"^/api" : ""}
   },
   "/graphql": {
-    "target": "http://localhost:3104",
+    "target": "http://localhost:3105",
     "secure": false
   }
 }

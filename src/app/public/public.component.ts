@@ -1,9 +1,6 @@
 import {afterNextRender, Component, HostListener, inject} from '@angular/core';
-import {FooterComponent} from "./footer/footer.component";
-import {NavigationComponent} from "./navigation/navigation.component";
-import {Event, RouterOutlet} from "@angular/router";
+import {Event, RouterLink, RouterOutlet} from "@angular/router";
 import {Title} from "@angular/platform-browser";
-import {NgClass} from '@angular/common';
 
 declare global {
  interface Window {
@@ -12,16 +9,14 @@ declare global {
 }
 
 @Component({
-  selector: 'app-public',
-  standalone: true,
+ selector: 'app-public',
+ standalone: true,
  imports: [
-  FooterComponent,
-  NavigationComponent,
   RouterOutlet,
-  NgClass
+  RouterLink
  ],
-  templateUrl: './public.component.html',
-  styleUrl: './public.component.scss'
+ templateUrl: './public.component.html',
+ styleUrl: './public.component.scss'
 })
 export class PublicComponent {
 
@@ -30,7 +25,7 @@ export class PublicComponent {
 
  constructor() {
   this.onResize();
-  this.titleService.setTitle('Jana Adamová realitní makléř');
+  this.titleService.setTitle('Site checker');
   afterNextRender(() => {
    this.initializeConsentMode();
   })

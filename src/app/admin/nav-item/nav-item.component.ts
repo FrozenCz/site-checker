@@ -19,7 +19,7 @@ import {MatTooltip} from "@angular/material/tooltip";
 })
 export class NavItemComponent {
 
-  routerLink = input<string>()
+  routerLink = input<string | string[]>()
   icon = input<string>()
   name = input<string>()
  clicked = output()
