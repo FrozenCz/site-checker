@@ -1,0 +1,53 @@
+
+:host {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ gap: 2rem;
+}
+
+.what-ioffer-header {
+ &--small {
+   color: #1e3c72;
+  //font-size: 1.3rem;
+  max-width: 80%;
+  text-align: center;
+ }
+}
+
+.offers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+ grid-template-rows: 1fr 1fr 1fr;
+  gap: 1rem;
+  color: #808080;
+}
+
+.offer {
+ background-color: white;
+ box-shadow: 0 6px 5px -6px rgba(0,0,0,0.7);
+
+ border-radius: 4px;
+ img {
+  //height: 138px;
+  width: 190px;
+ }
+ h3 {
+  font-size: 1rem;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+ }
+}
+
+
+@media (max-width: 1024px) {
+ .offers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+ }
+}

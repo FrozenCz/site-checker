@@ -1,0 +1,31 @@
+mat-list-item {
+ cursor: pointer !important;
+ color: whitesmoke;
+ display: flex;
+ flex-direction: row;
+ justify-content: flex-start;
+ align-items: center;
+ .nav__item__name {
+  margin-left: 1rem;
+ }
+ &:hover {
+  background-color: #444;
+  color: #ffffff;
+  mat-icon {
+   color: #ffffff;
+  }
+ }
+ &.admin-nav__item--active {
+  background-color: #555;
+  color: #ffffff;
+  mat-icon {
+   color: #ffffff;
+  }
+ }
+
+ mat-icon {
+  color: #a8a8a8;
+ }
+
+
+}

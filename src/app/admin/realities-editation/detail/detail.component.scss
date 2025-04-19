@@ -1,0 +1,76 @@
+:host {
+ display: flex;
+ flex-direction: row;
+ //justify-content: center;
+ //align-items: center;
+ gap: 2rem;
+ flex-grow: 1;
+ padding: 1rem;
+
+}
+.detail {
+ &--first, &--second {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  flex-basis: 50%;
+ }
+}
+
+.videoAndToggle {
+ display: flex;
+ flex-direction: row;
+ gap: 1rem;
+ & > div {
+  padding-left: 1rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+ }
+ &--right-side {
+  flex-grow: 1;
+  mat-form-field {
+   flex-grow: 1;
+  }
+ }
+
+
+}
+
+.images {
+ display: flex;
+ flex-wrap: wrap;
+ max-width: 100%;
+ gap: 15px;
+ padding: 15px;
+ border: solid 1px #ccc;
+ min-height: 60px;
+ border-radius: 4px;
+ overflow: hidden;
+
+ gap: 1rem;
+ &__item {
+  cursor: move;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  mat-icon {
+   cursor: pointer;
+  }
+  img {
+   width: 100px;
+  }
+ }
+
+}
+
+.detail__basic-info {
+ display: flex;
+ flex-direction: column;
+}
+
+
+.howTo {
+ cursor: pointer;
+
+}

@@ -1,0 +1,23 @@
+<div class="image_wrapper">
+ <div class="title">Váš makléř</div>
+<!-- <img src="/mainImage{{mainImageNumber}}.jpg"-->
+<!--      srcset="/mainImage{{mainImageNumber}}_460.jpg 460w, /mainImage{{mainImageNumber}}_1024.jpg 1024w"-->
+<!--      sizes="(max-width: 600px) 460px, (max-width: 1280px) 1024px" alt="Responsive Image">-->
+ @for (image of imagesInSlider; track $index) {
+<!--  <img [src]="image.url"-->
+<!--       [srcset]="image.urlSet"-->
+<!--       [@fadeImage]="image.currentState"-->
+<!--       sizes="(max-width: 600px) 460px, (max-width: 1280px) 1024px" alt="Responsive Image">-->
+
+  <img [src]="image.url"
+       [@fadeImage]="image.currentState"
+     alt="Responsive Image">
+
+ }
+
+<!-- <img src="/jana503.png" class="jana" *ngIf="mainImageNumber">-->
+ <a class="broker_name" href="tel:+420777862974">
+  <mat-icon>call</mat-icon>
+  Jana Adamová
+ </a>
+</div>

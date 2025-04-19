@@ -1,0 +1,105 @@
+type Advertisement {
+  """Images of advertisement"""
+  advertisementImages: [AdvertisementImage!]
+
+  """Created at"""
+  createdAt: String!
+
+  """Description of advertisement"""
+  description: String!
+
+  """Main image"""
+  imageUrl: String
+
+  """Map from google"""
+  map: String!
+
+  """Name of advertisement"""
+  name: String!
+
+  """Price"""
+  price: Float!
+
+  """If advertisement is published"""
+  published: Boolean!
+
+  """Status"""
+  status: String!
+
+  """Updated at"""
+  updatedAt: String!
+
+  """uuid"""
+  uuid: ID!
+
+  """Videos from youtube, separated by ;"""
+  video: String!
+}
+
+type AdvertisementImage {
+  """Base image url"""
+  imageUrl: String!
+
+  """Base image name"""
+  name: String!
+
+  """Order"""
+  order: Float!
+
+  """Image id"""
+  uuid: String!
+}
+
+input CreateAdvertisementInput {
+  """Advertisement name"""
+  name: String!
+}
+
+input CreateTestSourceInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type Mutation {
+  createAdvertisement(createAdvertisementInput: CreateAdvertisementInput!): Advertisement!
+  createTestSource(createTestSourceInput: CreateTestSourceInput!): TestSource!
+  deleteImage(imageUuid: String!, uuid: String!): AdvertisementImage!
+  removeAdvertisement(id: Int!): Advertisement!
+  removeTestSource(id: Int!): TestSource!
+  updateAdvertisement(updateAdvertisementInput: UpdateAdvertisementInput!, uuid: String!): Advertisement!
+  updateImageOrder(ord: [String!]!, uuid: String!): [AdvertisementImage!]!
+  updateTestSource(updateTestSourceInput: UpdateTestSourceInput!): TestSource!
+}
+
+type Query {
+  advertisement(uuid: String!): Advertisement!
+  advertisements(limit: Int, published: Boolean, status: String): [Advertisement!]!
+  testSource(id: Int!): TestSource!
+  testSources: [TestSource!]!
+}
+
+type TestSource {
+  """Example field (placeholder)"""
+  exampleField: Int!
+
+  """uuid"""
+  uuid: ID!
+}
+
+input UpdateAdvertisementInput {
+  description: String!
+  map: String!
+
+  """Advertisement name"""
+  name: String
+  price: Int!
+  published: Boolean!
+  status: String!
+  video: String!
+}
+
+input UpdateTestSourceInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}

@@ -1,0 +1,14 @@
+@import "css/base/layout";
+@import "css/colors/base";
+@import "ngx-lightbox/lightbox.css";
+
+.mat-mdc-snack-bar-container.successBar .mat-mdc-snackbar-surface{
+ background-color: #019344 !important;
+ color: #7efab6 !important;
+}
+
+.mat-mdc-snack-bar-container.errorBar .mat-mdc-snackbar-surface{
+ background-color: #e33131 !important;
+ color: #f7c6c6 !important;
+}
+

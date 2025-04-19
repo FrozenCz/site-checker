@@ -1,0 +1,111 @@
+$main-color: #0D2C4A;
+$main-text-color: #C4C8CC;
+$small-visible-color: lighten($main-color, 5%);
+$main-hover-color: white;
+$accent-hover-color: #e8f8fd;
+$gold: #8e7857;
+
+* {
+ scroll-behavior: smooth !important;
+}
+
+* {
+ //color: #808080;
+ //color: #2b2e30;
+ font-size: 1rem;
+}
+
+mat-toolbar-row, .broker_name, app-footer {
+ //background-color: $main-color;;
+}
+
+html {
+ background-color: white;
+}
+
+.nav, app-main-slider .title, .broker_name, app-footer, .like_nav {
+ color: $main-text-color;;
+
+ &__item {
+  &:hover, &-active {
+   color: $main-hover-color;
+
+   &::after {
+    background-color: $main-hover-color;;
+   }
+  }
+ }
+}
+
+
+app-featured-products {
+ app-featured-product {
+  &:hover {
+   //background-color: $accent-hover-color;
+  }
+ }
+}
+
+*::-webkit-scrollbar {
+ width: 12px;
+}
+
+*::-webkit-scrollbar-thumb {
+ background-color: $main-color;
+ border-radius: 10px;
+}
+
+*::-webkit-scrollbar-track {
+ background-color: $main-text-color;
+ border-radius: 10px;
+}
+
+.u-color-gold {
+ color: $gold;
+}
+
+.footer {
+ .other_stuff > div:nth-child(odd) {
+  border: 1px solid $small-visible-color;
+ }
+
+ .small_separator_bellow {
+  position: relative;
+
+  &:after {
+   content: ' ';
+   width: 10rem;
+   height: 1px;
+   background-color: $small-visible-color;
+   position: absolute;
+   bottom: -1px;
+   left: calc(50% - 5rem);
+  }
+ }
+}
+
+
+.anchor {
+ display: block;
+ position: relative;
+ top: -64px;
+ visibility: hidden;
+}
+
+
+.heading {
+ z-index: 2;
+ display: flex;
+ width: 100%;
+ justify-content: center;
+ align-items: center;
+ font-size: 2rem;
+ font-weight: 700;
+ color: #dc1c2e;
+}
+
+@media (max-width: 1024px) {
+ .heading {
+  text-align: center;
+ }
+}

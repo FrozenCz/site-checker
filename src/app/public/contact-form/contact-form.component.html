@@ -1,0 +1,40 @@
+<form class="contact-form" [formGroup]="contactForm">
+
+ <div class="contact-form__top">
+ <mat-form-field class="example-full-width">
+  <mat-label>Jméno</mat-label>
+  <input matInput placeholder="" value="" formControlName="name">
+  <mat-error>Nutné vyplnit</mat-error>
+ </mat-form-field>
+
+ <mat-form-field class="example-full-width">
+  <mat-label>Telefon</mat-label>
+  <input matInput placeholder="" value="" formControlName="phone">
+  <mat-error>Váš telefon, na kterém Vás mohu kontaktovat.</mat-error>
+ </mat-form-field>
+
+ <mat-form-field class="example-full-width">
+  <mat-label>Email</mat-label>
+  <input matInput placeholder="" value="" formControlName="email">
+  <mat-error>Váš email, na kterém Vás mohu kontaktovat.</mat-error>
+ </mat-form-field>
+
+ </div>
+
+ <div class="contact-form__bottom">
+
+ <mat-form-field class="example-full-width">
+  <mat-label>Zpráva</mat-label>
+  <textarea matInput placeholder="" formControlName="message"></textarea>
+ </mat-form-field>
+  <ngx-recaptcha2 #captchaElem
+                  [siteKey]="siteKey"
+                  [useGlobalDomain]="false"
+                  formControlName="recaptcha">
+  </ngx-recaptcha2>
+  <button mat-flat-button (click)="submitForm()" [disabled]="!contactForm.valid">Odeslat</button>
+
+ </div>
+
+
+</form>

@@ -1,0 +1,20 @@
+query getAdvertisementDetail($id: String!) {
+ advertisement(uuid: $id) {
+  uuid
+  name
+  description
+  price
+  createdAt
+  updatedAt
+  imageUrl
+  published
+  video
+  map
+  advertisementImages {
+   uuid
+   imageUrl
+   order
+  }
+ }
+}
+

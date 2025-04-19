@@ -1,0 +1,21 @@
+<div class="what-ioffer-header heading">
+ Co pro vás v rámci provize zajištuji
+</div>
+<div class="what-ioffer-header--small">
+ Proces prodeje nemovitosti zahrnuje celou škálu činností. Projděte si se mnou obchodní případ krok po kroku.
+</div>
+
+
+
+<div class="offers">
+
+@for (offer of offers; track offer.name) {
+ <div class="offer">
+  <img [src]="offer.image" alt="Offer image">
+  <div class="offer__text">
+   <h3>{{ offer.name }}</h3>
+  </div>
+ </div>
+}
+</div>
+

@@ -1,0 +1,45 @@
+<div class="nav-bar" *ngIf="!isMobile">
+ <div class="nav-bar--left">
+  <a href="#home">
+   <img src="/logo_remax.png">
+   <div class="broker_name">
+    <h2>Jana Adamová</h2>
+    <h3>Realitní makléř</h3>
+   </div>
+  </a>
+ </div>
+
+ <nav class="nav">
+  <a href="#sluzby">Služby</a>
+  <a href="#co-zajistuji">Co zajišťuji</a>
+  <a href="#spoluprace">Průběh spolupráce</a>
+  <a href="#reference">Reference</a>
+  <a href="#nabidka">Nabídka</a>
+  <a (click)="showWhereIAm()" class="phoneCall">
+   <mat-icon color="danger">home</mat-icon>
+   Kde mě najdete</a>
+ </nav>
+</div>
+
+<button mat-mini-fab (click)="showMenu=true" *ngIf="isMobile" id="menu_trigger">
+ <mat-icon class="like_nav">menu</mat-icon>
+</button>
+
+<div class="nav_wrapper" *ngIf="isMobile && showMenu" (click)="onMenuClicked()" [@navAnimation]>
+ <div class="nav_wrapper__content">
+  <div></div>
+  <nav class="nav">
+   <a href="#sluzby">Služby</a>
+   <a href="#co-zajistuji">Co zajišťuji</a>
+   <a href="#spoluprace">Průběh spolupráce</a>
+   <a href="#reference">Reference</a>
+   <a href="#nabidka">Nabídka</a>
+   <a (click)="showWhereIAm()">Kde mě najedete</a>
+  </nav>
+ </div>
+ <a href="tel:+420777862974" class="phoneCall">
+  <mat-icon color="danger">phone</mat-icon>
+  777 862 974</a>
+</div>
+
+

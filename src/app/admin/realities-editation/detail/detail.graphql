@@ -1,0 +1,37 @@
+query getDetail($uuid: String!) {
+ advertisement(uuid: $uuid) {
+  uuid
+  createdAt
+  name
+  description
+  published
+  price
+  status
+  video
+  imageUrl
+  map
+  advertisementImages {
+   uuid
+   imageUrl
+   order
+  }
+ }
+}
+
+mutation updateImagesOrder($advertisementUuid: String!, $updateImagesOrderInput: [String!]!) {
+ updateImageOrder(uuid: $advertisementUuid, ord: $updateImagesOrderInput) {
+  uuid
+ }
+}
+
+mutation deleteImage($uuid: String!, $imageUuid: String!) {
+ deleteImage(uuid: $uuid, imageUuid: $imageUuid) {
+  name
+ }
+}
+
+mutation updateAdvertisement($uuid: String!, $updateAdvertisementInput: UpdateAdvertisementInput!) {
+ updateAdvertisement(uuid: $uuid, updateAdvertisementInput: $updateAdvertisementInput) {
+  uuid
+ }
+}

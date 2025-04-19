@@ -1,0 +1,32 @@
+
+<ng-template #loginForm>
+<div mat-dialog-title>
+    Přihlášení
+</div>
+<mat-dialog-content>
+  <div>
+   <form class="login-form">
+    <mat-form-field appearance="fill">
+     <mat-label>Uživatelské jméno</mat-label>
+     <input matInput [formControl]="usernameFormControl" required>
+     <mat-error *ngIf="usernameFormControl.hasError('required')">
+      Username is <strong>required</strong>
+     </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+     <mat-label>Heslo</mat-label>
+     <input matInput [type]="hide ? 'password' : 'text'" [formControl]="passwordFormControl" required>
+     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+     <mat-error *ngIf="passwordFormControl.hasError('required')">
+      Password is <strong>required</strong>
+     </mat-error>
+    </mat-form-field>
+   </form>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+ <button mat-raised-button color="primary" [disabled]="!usernameFormControl.valid || !passwordFormControl.valid" (click)="logMeIn(usernameFormControl.value, passwordFormControl.value)">Přihlásit</button>
+</mat-dialog-actions>
+
+</ng-template>

@@ -1,0 +1,5 @@
+mutation createNewReality($createAdvertisementInput: CreateAdvertisementInput!) {
+  createAdvertisement(createAdvertisementInput: $createAdvertisementInput) {
+    uuid
+  }
+}

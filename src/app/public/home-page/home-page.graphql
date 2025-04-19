@@ -1,0 +1,24 @@
+query getActualAdvertisements {
+  advertisements(status: "actual", published: true) {
+    uuid
+    name
+    published
+    price
+    status
+    createdAt
+    imageUrl
+  }
+}
+
+
+query getSoldAdvertisements {
+ advertisements(status: "sold", published: true) {
+  uuid
+  name
+  published
+  price
+  status
+  createdAt
+  imageUrl
+ }
+}

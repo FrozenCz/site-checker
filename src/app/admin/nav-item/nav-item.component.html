@@ -1,0 +1,14 @@
+<mat-list-item
+ [routerLink]="routerLink()"
+ [routerLinkActive]="'admin-nav__item--active'"
+ (click)="clicked.emit()"
+ [routerLinkActiveOptions]="{exact: true}"
+ [matTooltip]="tooltip() + ''"
+ [matTooltipDisabled]="!tooltip()"
+>
+ <mat-icon matListItemIcon fontSet="material-icons-outlined">{{ icon() }}</mat-icon>
+ <!-- @if (!compactMode()) {-->
+ <div matListItemLine class="nav__item__name">{{ name() }}</div>
+ <!-- }-->
+
+</mat-list-item>

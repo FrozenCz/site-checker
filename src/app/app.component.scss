@@ -1,0 +1,10 @@
+:host {
+ display: flex;
+ flex-direction: column;
+ overflow: auto;
+ & > router-outlet {
+  //padding-top: 3rem;
+ }
+}
+
+

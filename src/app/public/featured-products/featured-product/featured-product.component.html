@@ -1,0 +1,11 @@
+<div class="featured_product">
+ <div class="featured_product__title" *ngIf="product?.title">
+  {{ product?.title }}
+ </div>
+ <div class="featured_product__image" *ngIf="product?.imageUrl">
+  <img src="{{ product?.imageUrl }}" alt="{{ product?.title }}">
+ </div>
+ <div class="featured_product__description">
+   {{ product?.description }}
+ </div>
+</div>

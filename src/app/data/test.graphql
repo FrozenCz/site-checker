@@ -1,0 +1,5 @@
+query getSources {
+  testSources @namedClient(name: "test") {
+    exampleField
+  }
+}
